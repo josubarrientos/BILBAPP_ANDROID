@@ -12,14 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class StaticSitiosAdapter extends BaseAdapter{
 
     private ArrayList<Sitios> listSitios;
-    private LayoutInflater lInflater;
     protected Activity activity;
 
     public StaticSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
@@ -31,10 +29,10 @@ public class StaticSitiosAdapter extends BaseAdapter{
     public int getCount() { return listSitios.size(); }
 
     @Override
-    public Object getItem(int arg0) { return listSitios.get(arg0); }
+    public Object getItem(int position) { return listSitios.get(position); }
 
     @Override
-    public long getItemId(int arg0) { return arg0; }
+    public long getItemId(int position) { return position; }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -47,12 +45,11 @@ public class StaticSitiosAdapter extends BaseAdapter{
         }
 
         Sitios sitio= listSitios.get(position);
-        Sitios dir= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
-        TextView califSitio = (TextView) v.findViewById(R.id.calificacionSitio);
-        califSitio.setText(sitio.getCalificacion());
+        RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
+        califSitio.setRating(sitio.getCalificacion());
 
         return v;
     }

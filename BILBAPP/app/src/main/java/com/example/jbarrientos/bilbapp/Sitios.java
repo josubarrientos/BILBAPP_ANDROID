@@ -7,9 +7,9 @@ package com.example.jbarrientos.bilbapp;
 public class Sitios {
 
     private String nombre;
-    private String calificacion;
+    private int calificacion;
 
-    public Sitios(String nombre, String calificacion) {
+    public Sitios(String nombre, int calificacion) {
         this.nombre = nombre;
         this.calificacion = calificacion;
     }
@@ -18,8 +18,8 @@ public class Sitios {
 
     public String getNombre() { return nombre; }
 
-    public void setCalificacion(String calificacion) { this.calificacion = calificacion; }
+    public void setCalificacion(int calificacion) { this.calificacion = calificacion; }
 
-    public String getCalificacion() { return calificacion; }
+    public int getCalificacion() { return calificacion; }
 
 }

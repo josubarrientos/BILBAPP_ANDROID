@@ -30,16 +30,16 @@ public class InfoActivity extends AppCompatActivity {
                 new ArrayList<Sitios>();
 
         versiones.add(
-                new Sitios("Lucid Lynx", "Lucid Lynx"));
+                new Sitios("Lucid Lynx", 3));
 
         versiones.add(
-                new Sitios("Lucid Lynx", "Lucid Lynx"));
+                new Sitios("Lucid Lynx", 5));
 
         versiones.add(
-                new Sitios("Lucid Lynx", "Lucid Lynx"));
+                new Sitios("Lucid Lynx", 4));
 
         versiones.add(
-                new Sitios("Lucid Lynx", "Lucid Lynx"));
+                new Sitios("Lucid Lynx", 2));
 
         StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
         //setListAdapter(adaptador);
