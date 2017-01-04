@@ -18,7 +18,8 @@
         <activity android:name=".LanguageSelection" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SelectionActivity" />
-        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".MapActivity"></activity>
     </application>
 
 </manifest>

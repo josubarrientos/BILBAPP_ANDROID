@@ -1,5 +1,6 @@
 package com.example.jbarrientos.bilbapp;
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,15 +15,36 @@ import java.util.List;
 
 public class InfoActivity extends AppCompatActivity {
 
-    ListView listView ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        setTitle(R.string.help_icon_1);
+        //setTitle(R.string.help_icon_1);
 
+        ListView lista = (ListView) findViewById(R.id.info_list);
+
+        ArrayList<Sitios> versiones =
+                new ArrayList<Sitios>();
+
+        versiones.add(
+                new Sitios("Lucid Lynx", "Lucid Lynx"));
+
+        versiones.add(
+                new Sitios("Lucid Lynx", "Lucid Lynx"));
+
+        versiones.add(
+                new Sitios("Lucid Lynx", "Lucid Lynx"));
+
+        versiones.add(
+                new Sitios("Lucid Lynx", "Lucid Lynx"));
+
+        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
+        //setListAdapter(adaptador);
+        lista.setAdapter(adaptador);
+/*
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.info_list);
 
@@ -48,7 +70,7 @@ public class InfoActivity extends AppCompatActivity {
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);
-
+*/
     }
 
 }
