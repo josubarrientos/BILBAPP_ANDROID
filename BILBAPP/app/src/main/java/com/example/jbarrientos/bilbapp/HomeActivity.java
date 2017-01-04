@@ -42,42 +42,63 @@ public class HomeActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Fiesta!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "fiesta");
+        startActivity(i);
     }
 
     public void selectCompra(View v){
 
         Toast.makeText(getApplicationContext(), "Compras!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "compras");
+        startActivity(i);
     }
 
     public void selectRestaurante(View v){
 
         Toast.makeText(getApplicationContext(), "Restaurantes!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "restaurantes");
+        startActivity(i);
     }
 
     public void selectHotel(View v){
 
         Toast.makeText(getApplicationContext(), "Hoteles!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "hotel");
+        startActivity(i);
     }
 
     public void selectDeporte(View v){
 
         Toast.makeText(getApplicationContext(), "Deportes!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "deporte");
+        startActivity(i);
     }
 
     public void selectMonumento(View v){
 
         Toast.makeText(getApplicationContext(), "Monumentos!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "monumentos");
+        startActivity(i);
     }
 
     public void selectTransporte(View v){
 
         Toast.makeText(getApplicationContext(), "Transportes!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
+        i.putExtra("extra_text", "transporte");
+        startActivity(i);
     }
 
 }

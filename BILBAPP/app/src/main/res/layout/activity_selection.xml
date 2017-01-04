@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_selection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.jbarrientos.bilbapp.SelectionActivity">
+
+
+    <Button
+        android:text="@string/help_icon_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:drawableLeft="@drawable/informationvariant"/>
+
+    <Button
+        android:text="@string/help_icon_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:drawableLeft="@drawable/map"/>
+
+    <Button
+        android:text="@string/help_icon_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:drawableLeft="@drawable/translate"/>
+
+    <Button
+        android:text="@string/help_icon_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:drawableLeft="@drawable/menu"/>
+
+    <Button
+        android:text="@string/help_icon_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:drawableLeft="@drawable/star"/>
+</LinearLayout>
