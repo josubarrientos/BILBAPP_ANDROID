@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">BILBAPP</string>
     <string name="texto">INGLES</string>
+
+    <string name="instrucciones1">Instructions</string>
+    <string name="texto_instrucciones1">Click on one of the logos of interest to obtain information of the same.</string>
+
+    <string name="help_icon_1">Item List</string>
+    <string name="help_icon_2">Maps</string>
+    <string name="help_icon_3">Translations</string>
+    <string name="help_icon_4">Experiences</string>
+    <string name="help_icon_5">Reviews</string>
 </resources>

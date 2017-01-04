@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">BILBAPP</string>
     <string name="texto">EUSKERA</string>
+
+    <string name="instrucciones1">Argibideak</string>
+    <string name="texto_instrucciones1">Sakatu interesatzen zaizun logoa gai horri buruzko informazio gehiago izateko.</string>
+
+    <string name="help_icon_1">Elementu lista</string>
+    <string name="help_icon_2">Mapak</string>
+    <string name="help_icon_3">Itzulpenak</string>
+    <string name="help_icon_4">Esperientziak</string>
+    <string name="help_icon_5">Berrikuzpenak</string>
 </resources>
