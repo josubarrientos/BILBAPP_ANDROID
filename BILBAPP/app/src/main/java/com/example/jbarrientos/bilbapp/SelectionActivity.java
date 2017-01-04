@@ -25,6 +25,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Info!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(SelectionActivity.this, InfoActivity.class);
+        startActivity(i);
+
     }
 
     public void selectMap(View v){
