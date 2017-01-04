@@ -20,7 +20,8 @@
         android:id="@+id/imageButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="selectFiesta"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
         android:id="@+id/imageButton2"
         android:layout_alignTop="@+id/imageButton"
         android:layout_toRightOf="@+id/imageButton"
-        android:layout_toEndOf="@+id/imageButton" />
+        android:layout_toEndOf="@+id/imageButton"
+        android:onClick="selectCompra"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -42,7 +44,8 @@
         android:id="@+id/imageButton3"
         android:layout_alignTop="@+id/imageButton2"
         android:layout_toRightOf="@+id/imageButton2"
-        android:layout_toEndOf="@+id/imageButton2" />
+        android:layout_toEndOf="@+id/imageButton2"
+        android:onClick="selectRestaurante"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -53,7 +56,8 @@
         android:layout_toEndOf="@+id/imageButton3"
         android:layout_marginLeft="9dp"
         android:layout_marginStart="9dp"
-        android:id="@+id/imageButton4" />
+        android:id="@+id/imageButton4"
+        android:onClick="selectHotel"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -65,7 +69,8 @@
         android:layout_marginRight="42dp"
         android:layout_marginEnd="42dp"
         android:layout_marginTop="52dp"
-        android:id="@+id/imageButton5" />
+        android:id="@+id/imageButton5"
+        android:onClick="selectDeporte"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -76,7 +81,8 @@
         android:layout_toEndOf="@+id/imageButton6"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
-        android:id="@+id/imageButton7" />
+        android:id="@+id/imageButton7"
+        android:onClick="selectTransporte"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -84,18 +90,7 @@
         app:srcCompat="@drawable/city"
         android:id="@+id/imageButton6"
         android:layout_alignTop="@+id/imageButton5"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="@string/texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/imageButton7"
-        android:layout_toStartOf="@+id/imageButton7"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginTop="48dp"
-        android:id="@+id/textView2" />
+        android:layout_centerHorizontal="true"
+        android:onClick="selectMonumento"/>
 
 </RelativeLayout>
