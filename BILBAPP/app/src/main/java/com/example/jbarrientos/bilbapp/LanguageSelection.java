@@ -17,6 +17,9 @@ import android.widget.VideoView;
 import android.widget.MediaController;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
+import android.content.res.Configuration;
+import java.util.Locale;
+
 
 public class LanguageSelection extends AppCompatActivity {
 
@@ -30,11 +33,29 @@ public class LanguageSelection extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Euskadi!", Toast.LENGTH_SHORT).show();
 
+        Locale locale = new Locale("eu");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
+
     }
 
     public void selectCatalunia(View v){
 
         Toast.makeText(getApplicationContext(), "Catalunia!", Toast.LENGTH_SHORT).show();
+
+        Locale locale = new Locale("ca");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
 
     }
 
@@ -42,11 +63,29 @@ public class LanguageSelection extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Galicia!", Toast.LENGTH_SHORT).show();
 
+        Locale locale = new Locale("gl");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
+
     }
 
     public void selectSpain(View v){
 
         Toast.makeText(getApplicationContext(), "Spain!", Toast.LENGTH_SHORT).show();
+
+        Locale locale = new Locale("es");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
 
     }
 
@@ -54,11 +93,29 @@ public class LanguageSelection extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "England!", Toast.LENGTH_SHORT).show();
 
+        Locale locale = new Locale("en");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
+
     }
 
     public void selectFrance(View v){
 
         Toast.makeText(getApplicationContext(), "France!", Toast.LENGTH_SHORT).show();
+
+        Locale locale = new Locale("fr");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+
+        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        startActivity(i);
 
     }
 }
