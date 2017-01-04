@@ -17,33 +17,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:drawableLeft="@drawable/informationvariant"/>
+        android:drawableLeft="@drawable/informationvariant"
+        android:onClick="selectInfo"/>
 
     <Button
         android:text="@string/help_icon_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
-        android:drawableLeft="@drawable/map"/>
+        android:drawableLeft="@drawable/map"
+        android:onClick="selectMap"/>
 
     <Button
         android:text="@string/help_icon_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:drawableLeft="@drawable/translate"/>
+        android:drawableLeft="@drawable/translate"
+        android:onClick="selectTrans"/>
 
     <Button
         android:text="@string/help_icon_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
-        android:drawableLeft="@drawable/menu"/>
+        android:drawableLeft="@drawable/menu"
+        android:onClick="selectExpr"/>
 
     <Button
         android:text="@string/help_icon_5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
-        android:drawableLeft="@drawable/star"/>
+        android:drawableLeft="@drawable/star"
+        android:onClick="selectStars"/>
 </LinearLayout>

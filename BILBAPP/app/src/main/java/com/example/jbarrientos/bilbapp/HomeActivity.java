@@ -1,16 +1,12 @@
 package com.example.jbarrientos.bilbapp;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.content.DialogInterface;
-import android.widget.Toast;
-
-import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -40,16 +36,12 @@ public class HomeActivity extends AppCompatActivity {
 
     public void selectFiesta(View v){
 
-        Toast.makeText(getApplicationContext(), "Fiesta!", Toast.LENGTH_SHORT).show();
-
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "fiesta");
         startActivity(i);
     }
 
     public void selectCompra(View v){
-
-        Toast.makeText(getApplicationContext(), "Compras!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "compras");
@@ -58,16 +50,12 @@ public class HomeActivity extends AppCompatActivity {
 
     public void selectRestaurante(View v){
 
-        Toast.makeText(getApplicationContext(), "Restaurantes!", Toast.LENGTH_SHORT).show();
-
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "restaurantes");
         startActivity(i);
     }
 
     public void selectHotel(View v){
-
-        Toast.makeText(getApplicationContext(), "Hoteles!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "hotel");
@@ -76,8 +64,6 @@ public class HomeActivity extends AppCompatActivity {
 
     public void selectDeporte(View v){
 
-        Toast.makeText(getApplicationContext(), "Deportes!", Toast.LENGTH_SHORT).show();
-
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "deporte");
         startActivity(i);
@@ -85,16 +71,12 @@ public class HomeActivity extends AppCompatActivity {
 
     public void selectMonumento(View v){
 
-        Toast.makeText(getApplicationContext(), "Monumentos!", Toast.LENGTH_SHORT).show();
-
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "monumentos");
         startActivity(i);
     }
 
     public void selectTransporte(View v){
-
-        Toast.makeText(getApplicationContext(), "Transportes!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
         i.putExtra("extra_text", "transporte");
