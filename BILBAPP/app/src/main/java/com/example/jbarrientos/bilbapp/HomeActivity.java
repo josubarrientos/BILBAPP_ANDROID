@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        new AlertDialog.Builder(this).setTitle(R.string.instrucciones1).setMessage(R.string.texto_instrucciones1).setNeutralButton(R.string.accept_bottom, new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.instrucciones1).setMessage(R.string.texto_instrucciones1).setNeutralButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 secondDialog();
             }
@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(this);
         final View view = factory.inflate(R.layout.help_layout, null);
         alertadd.setView(view);
-        alertadd.setNeutralButton(R.string.accept_bottom, null);
+        alertadd.setNeutralButton("OK",null);
         alertadd.show();
 
     }

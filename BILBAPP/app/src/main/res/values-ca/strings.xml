@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">BILBAPP</string>
     <string name="texto">CATALAN</string>
-
     <string name="instrucciones1">Instruccions</string>
     <string name="texto_instrucciones1">Pinxa en un dels logos d\'interès per obtenir informació sobre el mateix.</string>
-
     <string name="help_icon_1">Llista d\'elements</string>
     <string name="help_icon_2">Mapes</string>
     <string name="help_icon_3">Traduccions</string>

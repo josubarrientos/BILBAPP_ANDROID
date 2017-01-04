@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">BILBAPP</string>
     <string name="texto">FRANCES</string>
-
     <string name="instrucciones1">Instructions</string>
     <string name="texto_instrucciones1">Cliquez sur un des logos d\'intérêt pour obtenir des informations sur elle.</string>
-
     <string name="help_icon_1">Liste des articles</string>
     <string name="help_icon_2">Cartes</string>
     <string name="help_icon_3">Traductions</string>
