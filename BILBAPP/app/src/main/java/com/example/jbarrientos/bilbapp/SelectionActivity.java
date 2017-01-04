@@ -34,6 +34,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Map!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(SelectionActivity.this, MapActivity.class);
+        startActivity(i);
+
     }
 
     public void selectTrans(View v){
