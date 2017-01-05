@@ -12,7 +12,7 @@
         android:textSize="20sp"
         android:capitalize="words"
         android:typeface="sans"
-        android:id="@+id/follower_name"
+        android:id="@+id/user_name"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"/>
 
@@ -23,7 +23,7 @@
         android:textSize="20sp"
         android:capitalize="none"
         android:hint="Introduce Experiencia"
-        android:id="@+id/follower_email"
+        android:id="@+id/user_opinion"
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"/>
 
