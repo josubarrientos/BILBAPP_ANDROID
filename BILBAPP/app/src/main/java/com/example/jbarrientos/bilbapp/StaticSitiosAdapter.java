@@ -52,7 +52,7 @@ public class StaticSitiosAdapter extends BaseAdapter{
         nombreSitio.setText(sitio.getNombre());
         RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
         califSitio.setRating(sitio.getCalificacion());
-
+        califSitio.setIsIndicator(true);
         return v;
     }
 
