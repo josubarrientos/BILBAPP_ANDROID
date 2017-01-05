@@ -1,7 +1,10 @@
 package com.example.jbarrientos.bilbapp;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +47,7 @@ public class NameOfSitiosAdapter extends BaseAdapter {
             v = inf.inflate(R.layout.name_of_sitio_layout,null);
         }
 
-        Sitios sitio= listSitios.get(position);
+        final Sitios sitio= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
@@ -52,7 +55,11 @@ public class NameOfSitiosAdapter extends BaseAdapter {
         nombreSitio.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Seleccionado!", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(sitio.getDireccion()));
+                v.getContext().startActivity(intent);
+
             }
         });
 
