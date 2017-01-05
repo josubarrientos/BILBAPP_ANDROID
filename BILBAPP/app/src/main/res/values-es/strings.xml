@@ -8,4 +8,46 @@
     <string name="help_icon_3">Traducciones</string>
     <string name="help_icon_4">Experiencias</string>
     <string name="help_icon_5">Opiniones</string>
+
+    <string-array name="expresion_fiesta">
+        <item>Non topa dezaket diskoteka?;¿Dónde puedo encontrar la discoteca?;Non topa dezaket diskoteka?</item>
+        <item>Zein musika mota entzuten da diskotekan?;¿Qué tipo de música ponen en la discoteca?;Zein musika mota entzuten da diskotekan?</item>
+        <item>Non erosi ahal dut nire sarrera?;¿Dónde puedo conseguir mi entrada?;Non erosi ahal dut nire sarrera?</item>
+    </string-array>
+
+    <string-array name="expresion_compras">
+        <item>Non dago  kalea?;¿Dónde está la calle ?;Non dago  kalea?</item>
+        <item>Non dago  denda?;¿Dónde está la tienda ?;Non dago  denda?</item>
+        <item>"Zenbat balio du ?;¿Cuánto cuesta ?;Zenbat balio du ?</item>
+    </string-array>
+
+    <string-array name="expresion_restaurantes">
+        <item>Non dago  jatetxea?;¿Dónde está el restaurante ?;Non dago  jatetxea?</item>
+        <item>Garestia da  jatetxea?;¿Es caro el restaurante ?;Garestia da  jatetxea?</item>
+        <item>Zenbat balio du?;¿Cuánto cuesta?;Zenbat balio du?</item>
+    </string-array>
+
+    <string-array name="expresion_alojamiento">
+        <item>Gauero, zenbat ordaindu behar da  hotelean?;¿Cuánto cuesta por noche el hotel ?;Gauero, zenbat ordaindu behar da  hotelean?</item>
+        <item>Zein hotela gomendatzen didazu?;¿Qué hotel me recomendarías?;Zein hotela gomendatzen didazu?</item>
+        <item>Gosaria prezioren barne sartzen da?;¿Está incluido el desayuno?;Gosaria prezioren barne sartzen da?</item>
+    </string-array>
+
+    <string-array name="expresion_deportes">
+        <item>Non dago  polikiroldegia/zelaia?;¿Dónde está la calle ?;Non dago  polikiroldegia/zelaia?</item>
+        <item>Zein kirol mota praktikatu ahal dira  polikiroldegian?;¿Qué deportes se pueden hacer en el polideportivo ?;Zein kirol mota praktikatu ahal dira  polikiroldegian?</item>
+        <item>Zenbat balio du  zelaiaren sarrera?;¿Cuánto cuesta una entrada en el estadio ?;Zenbat balio du  zelaiaren sarrera?</item>
+    </string-array>
+
+    <string-array name="expresion_monumentos">
+        <item>Non dago kalea/enparantza?;¿Dónde está la calle/plaza ?;Non dago kalea/enparantza?</item>
+        <item>Nola deitzen da monumentu hau?;¿Cómo se llama el monumento ?;Nola deitzen da monumentu hau?</item>
+        <item>Zein da monumentu honen istorioa?;¿Cuál es la historia del monumento ?;Zein da monumentu honen istorioa?</item>
+    </string-array>
+
+    <string-array name="expresion_transporte">
+        <item>Zenbat kostatzen du?;Cuanto cuesta?;Zenbat Kostatzen du?</item>
+        <item>Non topa dezaket autobus/tren/metro geltokia?;Dónde puedo encontrar una estación de autobús/tren/metro?;Non topa dezaket autobus/tren/metro geltokia?</item>
+        <item>Nola eta non erosi dezaket autobus-/tren-/metro- txartela?;¿Dónde y cómo puedo comprar el billete deautobus/tren/metro?;Nola eta non erosi dezaket autobus-/tren-/metro- txartela?</item>
+    </string-array>
 </resources>
