@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.Model.Translation;
 
 import java.util.ArrayList;
 
@@ -17,50 +19,42 @@ public class InfoActivity extends AppCompatActivity {
 
         setTitle(R.string.help_icon_1);
 
+        String sitioType = getIntent().getStringExtra("extra_text");
+
         ListView lista = (ListView) findViewById(R.id.info_list);
 
-        ArrayList<Sitios> versiones =
-                new ArrayList<Sitios>();
+        DataPopulator recogedor = new DataPopulator();
 
-        versiones.add(
-                new Sitios("El Corte Ingles", 3));
+        ArrayList<Sitios> versiones = new ArrayList<Sitios>();
 
-        versiones.add(
-                new Sitios("Zara", 5));
+        switch (sitioType) {
 
-        versiones.add(
-                new Sitios("Fnac", 4));
-
-        versiones.add(
-                new Sitios("Pull and Bear", 2));
-
-        versiones.add(
-                new Sitios("El Corte Ingles", 3));
-
-        versiones.add(
-                new Sitios("Zara", 5));
-
-        versiones.add(
-                new Sitios("Fnac", 4));
-
-        versiones.add(
-                new Sitios("Pull and Bear", 2));
-
-        versiones.add(
-                new Sitios("El Corte Ingles", 3));
-
-        versiones.add(
-                new Sitios("Zara", 5));
-
-        versiones.add(
-                new Sitios("Fnac", 4));
-
-        versiones.add(
-                new Sitios("Pull and Bear", 2));
+            case "fiesta":
+                versiones = recogedor.cargaInfoSitiosFiesta(this);
+                break;
+            case "compras":
+                versiones = recogedor.cargaInfoSitiosCompras(this);
+                break;
+            case "restaurantes":
+                versiones = recogedor.cargaInfoSitiosRestaurantes(this);
+                break;
+            case "hotel":
+                versiones = recogedor.cargaInfoSitiosAlojamiento(this);
+                break;
+            case "deporte":
+                versiones = recogedor.cargaInfoSitiosDeportes(this);
+                break;
+            case "monumentos":
+                versiones = recogedor.cargaInfoSitiosMonumetnos(this);
+                break;
+            case "transporte":
+                versiones = recogedor.cargaInfoSitiosTransportes(this);
+            default:
+                break;
+        }
 
         StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
-
     }
 
 }

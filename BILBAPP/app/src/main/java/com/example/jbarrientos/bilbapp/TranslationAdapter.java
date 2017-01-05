@@ -55,7 +55,6 @@ public class TranslationAdapter extends BaseAdapter {
         TextView trans2Trans = (TextView) v.findViewById(R.id.transView3);
         trans2Trans.setText(transla.getTrans2());
 
-
         return v;
     }
 

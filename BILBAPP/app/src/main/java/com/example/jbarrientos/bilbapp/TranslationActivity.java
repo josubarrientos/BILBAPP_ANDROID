@@ -49,10 +49,8 @@ public class TranslationActivity extends AppCompatActivity {
                 break;
             case "transporte":
                 versiones = recogedor.cargaTranslationsTransportes(this);
-
             default:
                 break;
-
         }
 
         TranslationAdapter adaptador = new TranslationAdapter(this, versiones);

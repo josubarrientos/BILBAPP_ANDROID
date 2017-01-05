@@ -25,6 +25,7 @@ public class SelectionActivity extends AppCompatActivity {
     public void selectInfo(View v){
 
         Intent i = new Intent(SelectionActivity.this, InfoActivity.class);
+        i.putExtra("extra_text", data);
         startActivity(i);
 
     }
@@ -32,6 +33,7 @@ public class SelectionActivity extends AppCompatActivity {
     public void selectMap(View v){
 
         Intent i = new Intent(SelectionActivity.this, MapActivity.class);
+        i.putExtra("extra_text", data);
         startActivity(i);
 
     }
