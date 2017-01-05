@@ -43,6 +43,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Translation!", Toast.LENGTH_SHORT).show();
 
+        Intent i = new Intent(SelectionActivity.this, TranslationActivity.class);
+        startActivity(i);
+
     }
 
     public void selectExpr(View v){
