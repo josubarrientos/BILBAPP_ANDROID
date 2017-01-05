@@ -1,7 +1,11 @@
 package com.example.jbarrientos.bilbapp.Model;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import android.content.Context;
 
@@ -226,4 +230,29 @@ public class DataPopulator {
 
         return versiones;
     }
+
+    public ArrayList<Experience> cargaExperienciasByName(Context ctx,String name){
+
+        String nombreDeBusqueda = name;
+
+        Date inputDate = new Date();
+
+        String inputString = "11/11/2012";
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            inputDate = dateFormat.parse(inputString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Experience> versiones = new ArrayList<Experience>();
+
+        versiones.add(
+                new Experience("Pepito", inputDate,"Todo muy mal"));
+        versiones.add(
+                new Experience("Joaqin Cortes", inputDate,"Todo muy bien"));
+
+        return versiones;
+    }
+
 }
