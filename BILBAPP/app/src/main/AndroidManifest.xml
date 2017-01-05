@@ -20,7 +20,9 @@
         <activity android:name=".SelectionActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".MapActivity" />
-        <activity android:name=".TranslationActivity"></activity>
+        <activity android:name=".TranslationActivity" />
+        <activity android:name=".ExperienceActivity" />
+        <activity android:name=".ExpericenceShowActivity"></activity>
     </application>
 
 </manifest>

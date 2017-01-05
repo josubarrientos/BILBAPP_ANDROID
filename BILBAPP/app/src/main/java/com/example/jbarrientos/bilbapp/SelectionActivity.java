@@ -48,6 +48,10 @@ public class SelectionActivity extends AppCompatActivity {
 
     public void selectExpr(View v){
 
+        Intent i = new Intent(SelectionActivity.this, ExperienceActivity.class);
+        i.putExtra("extra_text", data);
+        startActivity(i);
+
     }
 
     public void selectStars(View v){
