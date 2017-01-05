@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.Model;
 
 /**
  * Created by jbarrientos on 5/01/17.

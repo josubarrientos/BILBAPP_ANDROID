@@ -15,6 +15,8 @@ import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.jbarrientos.bilbapp.Model.Sitios;
+
 public class StaticSitiosAdapter extends BaseAdapter{
 
     private ArrayList<Sitios> listSitios;

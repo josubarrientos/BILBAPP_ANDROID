@@ -11,6 +11,8 @@ import android.util.TypedValue;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import com.example.jbarrientos.bilbapp.Model.Sitios;
+
 import java.util.ArrayList;
 
 public class NameOfSitiosAdapter extends BaseAdapter {

@@ -1,12 +1,11 @@
-package com.example.jbarrientos.bilbapp;
-
-import android.content.res.Resources;
+package com.example.jbarrientos.bilbapp.Model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import android.content.Context;
-import java.util.ResourceBundle;
+
+import com.example.jbarrientos.bilbapp.R;
 
 /**
  * Created by jbarrientos on 5/01/17.
@@ -34,8 +33,6 @@ public class DataPopulator {
                     new Translation(list.get(0), list.get(1),list.get(2)));
 
         }
-
-        System.out.println("Se saca un arraylist con tamaño: "+versiones.size());
 
         return versiones;
 

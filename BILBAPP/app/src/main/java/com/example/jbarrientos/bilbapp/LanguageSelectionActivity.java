@@ -9,7 +9,7 @@ import android.content.res.Configuration;
 import java.util.Locale;
 
 
-public class LanguageSelection extends AppCompatActivity {
+public class LanguageSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }
@@ -40,7 +40,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }
@@ -53,7 +53,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }
@@ -66,7 +66,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }
@@ -79,7 +79,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }
@@ -92,7 +92,7 @@ public class LanguageSelection extends AppCompatActivity {
         config.locale = locale;
         getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
 
-        Intent i = new Intent(LanguageSelection.this, HomeActivity.class);
+        Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
 
     }

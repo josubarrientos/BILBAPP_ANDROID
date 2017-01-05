@@ -20,12 +20,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         data = getIntent().getStringExtra("extra_text");
 
-        Toast.makeText(getApplicationContext(), data, Toast.LENGTH_SHORT).show();
     }
 
     public void selectInfo(View v){
-
-        Toast.makeText(getApplicationContext(), "Info!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(SelectionActivity.this, InfoActivity.class);
         startActivity(i);
@@ -34,17 +31,12 @@ public class SelectionActivity extends AppCompatActivity {
 
     public void selectMap(View v){
 
-        Toast.makeText(getApplicationContext(), "Map!", Toast.LENGTH_SHORT).show();
-
         Intent i = new Intent(SelectionActivity.this, MapActivity.class);
-        i.putExtra("extra_text", data);
         startActivity(i);
 
     }
 
     public void selectTrans(View v){
-
-        Toast.makeText(getApplicationContext(), "Translation!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(SelectionActivity.this, TranslationActivity.class);
         i.putExtra("extra_text", data);
@@ -54,13 +46,9 @@ public class SelectionActivity extends AppCompatActivity {
 
     public void selectExpr(View v){
 
-        Toast.makeText(getApplicationContext(), "Expressions!", Toast.LENGTH_SHORT).show();
-
     }
 
     public void selectStars(View v){
-
-        Toast.makeText(getApplicationContext(), "Stars!", Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.jbarrientos.bilbapp.Model.DataPopulator;
+import com.example.jbarrientos.bilbapp.Model.Translation;
+
 import java.util.ArrayList;
 
 public class TranslationActivity extends AppCompatActivity {
@@ -22,13 +25,11 @@ public class TranslationActivity extends AppCompatActivity {
 
         DataPopulator recogedor = new DataPopulator();
 
-
         ArrayList<Translation> versiones = new ArrayList<Translation>();
 
         switch (sitioType) {
 
             case "fiesta":
-                Toast.makeText(getApplicationContext(),sitioType, Toast.LENGTH_SHORT).show();
                 versiones = recogedor.cargaTranslationsFiesta(this);
                 break;
             case "compras":
@@ -53,18 +54,6 @@ public class TranslationActivity extends AppCompatActivity {
                 break;
 
         }
-
-        /*ArrayList<Translation> versiones = new ArrayList<Translation>();
-
-        versiones.add(
-                new Translation("El Corte Ingles", "fsadfsa","fsafsfa"));
-        versiones.add(
-                new Translation("El Corte Ingles", "fsadfsa","fsafsfa"));
-        versiones.add(
-                new Translation("El Corte Ingles", "fsadfsa","fsafsfa"));
-        versiones.add(
-                new Translation("El Corte Ingles", "fsadfsa","fsafsfa"));
-*/
 
         TranslationAdapter adaptador = new TranslationAdapter(this, versiones);
         lista.setAdapter(adaptador);

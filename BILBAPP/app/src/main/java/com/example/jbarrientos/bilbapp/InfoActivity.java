@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.jbarrientos.bilbapp.Model.Sitios;
+
 import java.util.ArrayList;
 
 public class InfoActivity extends AppCompatActivity {
