@@ -2,10 +2,12 @@ package com.example.jbarrientos.bilbapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
+import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Experience;
 
 import java.text.DateFormat;
@@ -35,6 +37,24 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
         ExperienceAdapter adaptador = new ExperienceAdapter(this, versiones);
         lista.setAdapter(adaptador);
+
+    }
+
+    public void sendReview(View v){
+
+        DataSender sender = new DataSender();
+
+        Boolean state = sender.sendExperiencia(this,"data");
+
+        if (state){
+
+            Toast toast1 =
+                    Toast.makeText(getApplicationContext(),
+                            "Correctamente enviado", Toast.LENGTH_SHORT);
+
+            toast1.show();
+        }
+
 
     }
 }
