@@ -30,7 +30,7 @@ public class DataSender {
         LayoutInflater factory = LayoutInflater.from(ctx);
         final View f = factory.inflate(R.layout.experience_insert, null);
 
-        loginDialog.setTitle("Please enter your name and you experience in "+nombreSitio);
+        loginDialog.setTitle(ctx.getString(R.string.qualification_title)+" "+nombreSitio);
         loginDialog.setView(f);
 
         Button submit = (Button)f.findViewById(R.id.submit);

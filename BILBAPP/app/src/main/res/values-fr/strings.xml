@@ -9,6 +9,9 @@
     <string name="help_icon_4">Expériences</string>
     <string name="help_icon_5">Avis</string>
 
+    <string name="sending_button">ENVOYER</string>
+    <string name="qualification_title">Introduit votre expérience : </string>
+
     <string-array name="expresion_fiesta">
         <item>Non topa dezaket diskoteka?;¿Dónde puedo encontrar la discoteca?;Non topa dezaket diskoteka?</item>
         <item>Zein musika mota entzuten da diskotekan?;¿Qué tipo de música ponen en la discoteca?;Zein musika mota entzuten da diskotekan?</item>
