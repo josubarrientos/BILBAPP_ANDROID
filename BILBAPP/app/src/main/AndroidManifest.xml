@@ -22,7 +22,8 @@
         <activity android:name=".MapActivity" />
         <activity android:name=".TranslationActivity" />
         <activity android:name=".ExperienceActivity" />
-        <activity android:name=".ExpericenceShowActivity"></activity>
+        <activity android:name=".ExpericenceShowActivity" />
+        <activity android:name=".QualificationActivity"></activity>
     </application>
 
 </manifest>

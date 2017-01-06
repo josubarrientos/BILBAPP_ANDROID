@@ -4,24 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.QualificationOfSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 
 import java.util.ArrayList;
 
-public class InfoActivity extends AppCompatActivity {
+public class QualificationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_qualification);
 
-        setTitle(R.string.help_icon_1);
+        setTitle(R.string.help_icon_5);
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
-        ListView lista = (ListView) findViewById(R.id.info_list);
+        ListView lista = (ListView) findViewById(R.id.qualification_list);
 
         DataPopulator recogedor = new DataPopulator();
 
@@ -53,8 +53,7 @@ public class InfoActivity extends AppCompatActivity {
                 break;
         }
 
-        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
+        QualificationOfSitiosAdapter adaptador = new QualificationOfSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
     }
-
 }

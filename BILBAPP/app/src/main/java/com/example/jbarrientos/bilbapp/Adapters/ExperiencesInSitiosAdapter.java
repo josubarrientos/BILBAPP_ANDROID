@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.jbarrientos.bilbapp.ExpericenceShowActivity;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.R;
 
 import java.util.ArrayList;
 

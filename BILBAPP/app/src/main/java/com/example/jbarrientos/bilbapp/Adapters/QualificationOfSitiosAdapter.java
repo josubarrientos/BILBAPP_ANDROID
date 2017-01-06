@@ -1,10 +1,8 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.Adapters;
 
 /**
  * Created by jbarrientos on 4/01/17.
  */
-
-import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,15 +12,21 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.RatingBar.OnRatingBarChangeListener;
 
+
+import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.R;
 
-public class StaticSitiosAdapter extends BaseAdapter{
+import java.util.ArrayList;
+
+public class QualificationOfSitiosAdapter extends BaseAdapter{
 
     private ArrayList<Sitios> listSitios;
     protected Activity activity;
 
-    public StaticSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
+    public QualificationOfSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
         this.activity=activity;
         this.listSitios = sitios;
     }
@@ -37,7 +41,7 @@ public class StaticSitiosAdapter extends BaseAdapter{
     public long getItemId(int position) { return position; }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, final View convertView, ViewGroup parent) {
 
         View v = convertView;
 
@@ -46,13 +50,28 @@ public class StaticSitiosAdapter extends BaseAdapter{
             v = inf.inflate(R.layout.static_sitio_layout,null);
         }
 
-        Sitios sitio= listSitios.get(position);
+        final Sitios sitio= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
-        RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
-        califSitio.setRating(sitio.getCalificacion());
-        califSitio.setIsIndicator(true);
+        final RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
+
+        final View volcado = v;
+
+        califSitio.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+
+                califSitio.setIsIndicator(true);
+
+                DataSender sender = new DataSender();
+
+                sender.sendQualification(volcado.getContext(),sitio.getNombre(),sitio.getCalificacion());
+
+
+            }
+        });
+
         return v;
     }
 

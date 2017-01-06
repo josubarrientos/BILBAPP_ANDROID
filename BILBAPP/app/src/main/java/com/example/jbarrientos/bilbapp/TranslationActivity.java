@@ -3,8 +3,8 @@ package com.example.jbarrientos.bilbapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.jbarrientos.bilbapp.Adapters.TranslationAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.Translation;
 

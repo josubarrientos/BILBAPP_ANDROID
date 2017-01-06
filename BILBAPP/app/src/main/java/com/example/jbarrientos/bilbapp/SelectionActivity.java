@@ -56,5 +56,9 @@ public class SelectionActivity extends AppCompatActivity {
 
     public void selectStars(View v){
 
+        Intent i = new Intent(SelectionActivity.this, QualificationActivity.class);
+        i.putExtra("extra_text", data);
+        startActivity(i);
+
     }
 }

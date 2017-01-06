@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.jbarrientos.bilbapp.R;
 
@@ -58,4 +59,19 @@ public class DataSender {
         return sended;
 
     }
+
+    public Boolean sendQualification(Context ctx,String nombre,float nota){
+
+        Boolean sended = true;
+
+        Toast toast1 =
+                Toast.makeText(ctx,
+                        nombre+" : "+nota, Toast.LENGTH_SHORT);
+
+        toast1.show();
+
+        return sended;
+
+    }
+
 }
