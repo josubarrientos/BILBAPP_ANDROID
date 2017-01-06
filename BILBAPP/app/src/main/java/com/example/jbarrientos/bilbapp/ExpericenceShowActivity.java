@@ -18,12 +18,14 @@ import java.util.Date;
 
 public class ExpericenceShowActivity extends AppCompatActivity {
 
+    private String nombre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expericence_show);
 
-        String nombre = getIntent().getStringExtra("extra_text");
+        nombre = getIntent().getStringExtra("extra_text");
 
         setTitle(R.string.help_icon_4);
 
@@ -44,7 +46,7 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
         DataSender sender = new DataSender();
 
-        Boolean state = sender.sendExperiencia(this,"data");
+        Boolean state = sender.sendExperiencia(this,nombre);
 
         if (state){
 

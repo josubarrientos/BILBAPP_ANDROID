@@ -21,7 +21,7 @@ public class DataSender {
 
     }
 
-    public Boolean sendExperiencia(Context ctx,String experiencia){
+    public Boolean sendExperiencia(Context ctx,String nombreSitio){
 
         Boolean sended = true;
 
@@ -30,7 +30,7 @@ public class DataSender {
         LayoutInflater factory = LayoutInflater.from(ctx);
         final View f = factory.inflate(R.layout.experience_insert, null);
 
-        loginDialog.setTitle("Please enter your name and you experience");
+        loginDialog.setTitle("Please enter your name and you experience in "+nombreSitio);
         loginDialog.setView(f);
 
         Button submit = (Button)f.findViewById(R.id.submit);
