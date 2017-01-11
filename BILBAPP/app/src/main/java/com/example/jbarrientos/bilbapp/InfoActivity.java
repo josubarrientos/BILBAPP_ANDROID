@@ -6,11 +6,14 @@ import android.widget.ListView;
 
 import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
+import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskSitios;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 
 import java.util.ArrayList;
 
 public class InfoActivity extends AppCompatActivity {
+
+    ListView lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,17 @@ public class InfoActivity extends AppCompatActivity {
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
-        ListView lista = (ListView) findViewById(R.id.info_list);
+        lista = (ListView) findViewById(R.id.info_list);
 
-        DataPopulator recogedor = new DataPopulator();
+        //DataPopulator recogedor = new DataPopulator();
 
-        ArrayList<Sitios> versiones = new ArrayList<Sitios>();
 
+        //ArrayList<Sitios> versiones = new ArrayList<Sitios>();
+
+        MyAsyncTaskSitios runner = new MyAsyncTaskSitios(InfoActivity.this);
+        runner.execute("tutut");
+
+                /*
         switch (sitioType) {
 
             case "fiesta":
@@ -51,10 +59,17 @@ public class InfoActivity extends AppCompatActivity {
                 versiones = recogedor.cargaInfoSitiosTransportes(this);
             default:
                 break;
-        }
+        }*/
 
-        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
+        //StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
+        //lista.setAdapter(adaptador);
+    }
+
+
+    public void populateList(ArrayList<Sitios> sitios) {
+        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, sitios);
         lista.setAdapter(adaptador);
     }
+
 
 }
