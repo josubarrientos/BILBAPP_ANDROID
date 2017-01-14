@@ -5,13 +5,23 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.jbarrientos.bilbapp.Adapters.ExperiencesInSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
+import com.example.jbarrientos.bilbapp.Model.Experience;
+import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ExperienceActivity extends AppCompatActivity {
+
+    ListView lista;
+    private ArrayList<Sitios> versiones = new ArrayList<Sitios>();
+    private DataPopulator dp = new DataPopulator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,40 +32,94 @@ public class ExperienceActivity extends AppCompatActivity {
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
-        ListView lista = (ListView) findViewById(R.id.info_list);
+        lista = (ListView) findViewById(R.id.info_list);
 
-        DataPopulator recogedor = new DataPopulator();
+        SitiosQuery(sitioType);
 
-        ArrayList<Sitios> versiones = new ArrayList<Sitios>();
-/*
-        switch (sitioType) {
 
-            case "fiesta":
-                versiones = recogedor.cargaInfoSitiosFiesta(this);
-                break;
-            case "compras":
-                versiones = recogedor.cargaInfoSitiosCompras(this);
-                break;
-            case "restaurantes":
-                versiones = recogedor.cargaInfoSitiosRestaurantes(this);
-                break;
-            case "hotel":
-                versiones = recogedor.cargaInfoSitiosAlojamiento(this);
-                break;
-            case "deporte":
-                versiones = recogedor.cargaInfoSitiosDeportes(this);
-                break;
-            case "monumentos":
-                versiones = recogedor.cargaInfoSitiosMonumetnos(this);
-                break;
-            case "transporte":
-                versiones = recogedor.cargaInfoSitiosTransportes(this);
-            default:
-                break;
-        }
-*/
-        ExperiencesInSitiosAdapter adaptador = new ExperiencesInSitiosAdapter(this, versiones);
-        lista.setAdapter(adaptador);
+    }
 
+    public void SitiosQuery (final String typeSitio){
+        new QueryAsyncTask<ArrayList<Sitios>>(this) {
+            @Override
+            protected ArrayList<Sitios> work() throws Exception{
+
+                switch (typeSitio) {
+
+                    case "fiesta":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "compras":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "restaurantes":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "hotel":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "deporte":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "monumentos":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case "transporte":
+                        try {
+                            versiones = dp.cargaInfoSitios(typeSitio);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    default:
+                        break;
+                }
+
+                return versiones;
+            }
+
+            @Override
+            protected void onFinish(ArrayList<Sitios> estado){
+                ExperiencesInSitiosAdapter adaptador = new ExperiencesInSitiosAdapter(ExperienceActivity.this, versiones);
+                lista.setAdapter(adaptador);
+            }
+        }.execute();
     }
 }
