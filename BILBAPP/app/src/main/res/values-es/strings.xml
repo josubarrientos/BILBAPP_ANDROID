@@ -12,6 +12,9 @@
     <string name="sending_button">ENVIAR</string>
     <string name="qualification_title">Introduce tu experiencia : </string>
 
+    <string name="post_response_code_OK">Envio realizado correctamente</string>
+    <string name="post_response_code_NOK">Envio fallido</string>
+
     <string-array name="expresion_fiesta">
         <item>Non topa dezaket diskoteka?;¿Dónde puedo encontrar la discoteca?;Non topa dezaket diskoteka?</item>
         <item>Zein musika mota entzuten da diskotekan?;¿Qué tipo de música ponen en la discoteca?;Zein musika mota entzuten da diskotekan?</item>

@@ -5,10 +5,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
 import com.example.jbarrientos.bilbapp.R;
+import com.example.jbarrientos.bilbapp.View.ExpericenceShowActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 
 /**
@@ -18,15 +29,18 @@ import com.example.jbarrientos.bilbapp.R;
 public class DataSender {
 
     private RestClient restClient;
-    private String server = "http://u017633.ehu.eus:28080/BILBAPP_SERVER/rest/Bilbapp/";
+    private String server = "http://u017633.ehu.eus:28080/BILBAPP_SERVER/rest/Bilbapp";
+    private String senderUserName;
+    private String senderOpinion;
+    private Context contx;
 
     public DataSender(){
-
+        restClient = new RestClient(server);
     }
 
-    public Boolean sendExperiencia(Context ctx,String nombreSitio){
+    public void sendExperiencia(Context ctx, final String nombreSitio) throws IOException, JSONException {
 
-        Boolean sended = true;
+        contx=ctx;
 
         AlertDialog.Builder loginDialog = new AlertDialog.Builder(ctx);
 
@@ -48,8 +62,36 @@ public class DataSender {
                 EditText name = (EditText)f.findViewById(R.id.user_name);
                 EditText opinion = (EditText)f.findViewById(R.id.user_opinion);
 
-                String user_name = name.getText().toString();
-                String user_opinion = opinion.getText().toString();
+                senderUserName = name.getText().toString();
+                senderOpinion = opinion.getText().toString();
+
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                String formattedDate = df.format(c.getTime());
+
+                final JSONObject jo = new JSONObject();
+                try {
+                    jo.put("critica",senderOpinion);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    jo.put("fecha",formattedDate);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    jo.put("usuario",senderUserName);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    jo.put("sitio",nombreSitio);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                ExperiencePost(jo);
 
                 dialog.dismiss();
 
@@ -58,8 +100,6 @@ public class DataSender {
         });
 
         dialog.show();
-
-        return sended;
 
     }
 
@@ -76,5 +116,35 @@ public class DataSender {
         return sended;
 
     }
+
+    public void ExperiencePost (final JSONObject jo){
+        new QueryAsyncTask<Integer>(contx) {
+            @Override
+            protected Integer work() throws Exception{
+
+                return restClient.postJson(jo,"addCriticas");
+            }
+
+            @Override
+            protected void onFinish(Integer estado){
+                System.out.println("Vuelta: "+estado);
+
+                if(estado==200){
+                    Toast toast1 =
+                            Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
+
+                    toast1.show();
+                }else{
+                    Toast toast1 =
+                            Toast.makeText(contx,R.string.post_response_code_NOK, Toast.LENGTH_SHORT);
+
+                    toast1.show();
+                }
+
+
+            }
+        }.execute();
+    }
+
 
 }

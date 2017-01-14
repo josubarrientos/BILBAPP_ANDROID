@@ -42,19 +42,11 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
     }
 
-    public void sendReview(View v){
+    public void sendReview(View v) throws IOException, JSONException {
 
         DataSender sender = new DataSender();
 
-        Boolean state = sender.sendExperiencia(this,nombre);
-
-        if (state){
-
-            Toast toast1 =
-                    Toast.makeText(getApplicationContext(),
-                            "Correctamente enviado", Toast.LENGTH_SHORT);
-            toast1.show();
-        }
+        sender.sendExperiencia(this,nombre);
 
     }
 
@@ -63,8 +55,8 @@ public class ExpericenceShowActivity extends AppCompatActivity {
             @Override
             protected ArrayList<Experience> work() throws Exception{
 
+                //versiones = dp.cargaExperienciasByName(nombreSitio.replaceAll("\\s+","%20"));
                 versiones = dp.cargaExperienciasByName(nombreSitio);
-
                 return versiones;
             }
 

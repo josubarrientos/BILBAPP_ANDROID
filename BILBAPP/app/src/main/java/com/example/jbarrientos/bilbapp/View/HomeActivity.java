@@ -60,14 +60,14 @@ public class HomeActivity extends AppCompatActivity {
     public void selectHotel(View v){
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
-        i.putExtra("extra_text", "hotel");
+        i.putExtra("extra_text", "alojamiento");
         startActivity(i);
     }
 
     public void selectDeporte(View v){
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
-        i.putExtra("extra_text", "deporte");
+        i.putExtra("extra_text", "deportes");
         startActivity(i);
     }
 
@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
     public void selectTransporte(View v){
 
         Intent i = new Intent(HomeActivity.this, SelectionActivity.class);
-        i.putExtra("extra_text", "transporte");
+        i.putExtra("extra_text", "transportes");
         startActivity(i);
     }
 

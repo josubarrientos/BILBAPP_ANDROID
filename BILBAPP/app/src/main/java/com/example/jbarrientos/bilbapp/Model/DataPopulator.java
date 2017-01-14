@@ -1,6 +1,8 @@
 package com.example.jbarrientos.bilbapp.Model;
 
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -73,6 +75,7 @@ public class DataPopulator {
 
     public ArrayList<Sitios> cargaInfoSitios(String tipoSitio) throws IOException, JSONException {
 
+        System.out.println("Sitio: "+String.format("requestSitios?opcionName=%s",tipoSitio));
         JSONObject jo = restClient.getJson(String.format("requestSitios?opcionName=%s",tipoSitio));
 
         JSONArray listaSitios = jo.getJSONArray("sitio");
@@ -91,8 +94,9 @@ public class DataPopulator {
 
     public ArrayList<Experience> cargaExperienciasByName(String name) throws IOException, JSONException{
 
-        JSONObject jo = restClient.getJson(String.format("requestCriticas?sitioName=%s",name));
+        String formatedName = URLEncoder.encode(name,"UTF-8");
 
+        JSONObject jo = restClient.getJson(String.format("requestCriticas?sitioName=%s",formatedName));
         JSONArray listaCriticas = jo.getJSONArray("critica");
 
         int listaCriticasLength = listaCriticas.length();
@@ -105,7 +109,7 @@ public class DataPopulator {
 
             String inputString = jsonCritica.getString("fecha");
 
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             try {
                 inputDate = dateFormat.parse(inputString);
             } catch (ParseException e) {
@@ -120,6 +124,6 @@ public class DataPopulator {
 
         return arrayExperiencias;
     }
- 
+
 
 }
