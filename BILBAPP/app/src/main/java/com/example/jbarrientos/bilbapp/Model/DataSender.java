@@ -107,17 +107,39 @@ public class DataSender {
 
     }
 
-    public Boolean sendQualification(Context ctx,String nombre,float nota){
+    public void sendQualification(Context ctx,String nombre,float nota) throws IOException, JSONException {
 
-        Boolean sended = true;
+        final JSONObject jo = new JSONObject();
+        jo.put("calificacion",nota);
+        jo.put("sitio",nombre);
 
-        Toast toast1 =
-                Toast.makeText(ctx,
-                        nombre+" : "+nota, Toast.LENGTH_SHORT);
+        new QueryAsyncTask<Integer>(contx) {
+            @Override
+            protected Integer work() throws Exception{
 
-        toast1.show();
+                return restClient.postJson(jo,"addPuntuacion");
+            }
 
-        return sended;
+            @Override
+            protected void onFinish(Integer estado){
+                System.out.println("Vuelta: "+estado);
+
+                if(estado==200){
+                    Toast toast1 = Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
+                    toast1.show();
+                    Intent i = new Intent(contx, ExpericenceShowActivity.class);
+                    i.putExtra("extra_text", nombreDeSitio);
+                    contx.startActivity(i);
+                    ((Activity) contx).finish();
+                }else{
+                    Toast toast1 =
+                            Toast.makeText(contx,R.string.post_response_code_NOK, Toast.LENGTH_SHORT);
+
+                    toast1.show();
+                }
+
+            }
+        }.execute();
 
     }
 
