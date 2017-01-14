@@ -1,13 +1,11 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import java.util.Locale;
+import com.example.jbarrientos.bilbapp.R;
 
 public class SelectionActivity extends AppCompatActivity {
 

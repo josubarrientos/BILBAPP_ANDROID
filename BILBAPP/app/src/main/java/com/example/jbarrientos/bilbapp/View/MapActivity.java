@@ -1,40 +1,41 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.NameOfSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskSitios;
+import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskMapas;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.R;
 
 import java.util.ArrayList;
 
-public class InfoActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     ListView lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_map);
 
-        setTitle(R.string.help_icon_1);
+        setTitle(R.string.help_icon_2);
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
         lista = (ListView) findViewById(R.id.info_list);
 
-        //DataPopulator recogedor = new DataPopulator();
+        DataPopulator recogedor = new DataPopulator();
 
+        ArrayList<Sitios> versiones = new ArrayList<Sitios>();
 
-        //ArrayList<Sitios> versiones = new ArrayList<Sitios>();
+        MyAsyncTaskMapas runner = new MyAsyncTaskMapas(MapActivity.this);
+        runner.execute(sitioType);
 
-        MyAsyncTaskSitios runner = new MyAsyncTaskSitios(InfoActivity.this);
-        runner.execute("tutut");
+        /*
 
-                /*
         switch (sitioType) {
 
             case "fiesta":
@@ -59,15 +60,16 @@ public class InfoActivity extends AppCompatActivity {
                 versiones = recogedor.cargaInfoSitiosTransportes(this);
             default:
                 break;
-        }*/
+        }
+*/
 
-        //StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, versiones);
+       // NameOfSitiosAdapter adaptador = new NameOfSitiosAdapter(this, versiones);
         //lista.setAdapter(adaptador);
+
     }
 
-
     public void populateList(ArrayList<Sitios> sitios) {
-        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, sitios);
+        NameOfSitiosAdapter adaptador = new NameOfSitiosAdapter(this, sitios);
         lista.setAdapter(adaptador);
     }
 

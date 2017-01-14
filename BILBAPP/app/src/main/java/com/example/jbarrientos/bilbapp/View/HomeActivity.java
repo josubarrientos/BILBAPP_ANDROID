@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.content.DialogInterface;
+
+import com.example.jbarrientos.bilbapp.R;
 
 public class HomeActivity extends AppCompatActivity {
 

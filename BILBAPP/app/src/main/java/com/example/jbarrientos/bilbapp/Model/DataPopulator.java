@@ -1,5 +1,6 @@
 package com.example.jbarrientos.bilbapp.Model;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,14 +12,22 @@ import android.content.Context;
 
 import com.example.jbarrientos.bilbapp.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by jbarrientos on 5/01/17.
  */
 
 public class DataPopulator {
 
-    public DataPopulator (){
+    private RestClient restClient;
+    private String server = "http://u017633.ehu.eus:28080/BILBAPP_SERVER/rest/Bilbapp";
+    private ArrayList<Sitios> arraySitios = new ArrayList<Sitios>();
 
+    public DataPopulator (){
+        restClient = new RestClient(server);
     }
 
     public ArrayList<Translation> cargaTranslationsFiesta(Context ctx){
@@ -117,6 +126,24 @@ public class DataPopulator {
                     new Translation(list.get(0), list.get(1),list.get(2)));
         }
         return versiones;
+    }
+
+    public ArrayList<Sitios> cargaInfoSitios(String tipoSitio) throws IOException, JSONException {
+
+        JSONObject jo = restClient.getJson(String.format("requestSitios?opcionName=%s",tipoSitio));
+
+        JSONArray listaSitios = jo.getJSONArray("sitio");
+        int listaSitiosLength = listaSitios.length();
+
+        for(int i = 0;i<listaSitiosLength;i++){
+            JSONObject jsonSitio = listaSitios.getJSONObject(i);
+            Sitios sitioTemp = new Sitios(jsonSitio.getString("sitio"),jsonSitio.getInt("puntuacion"),jsonSitio.getString("direccion"));
+
+            arraySitios.add(sitioTemp);
+
+        }
+
+        return arraySitios;
     }
 
     public ArrayList<Sitios> cargaInfoSitiosFiesta(Context ctx){

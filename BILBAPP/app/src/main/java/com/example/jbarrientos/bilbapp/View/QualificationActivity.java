@@ -1,42 +1,32 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.NameOfSitiosAdapter;
-import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.QualificationOfSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskMapas;
-import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskSitios;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.R;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-public class MapActivity extends AppCompatActivity {
-
-    ListView lista;
+public class QualificationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_qualification);
 
-        setTitle(R.string.help_icon_2);
+        setTitle(R.string.help_icon_5);
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
-        lista = (ListView) findViewById(R.id.info_list);
+        ListView lista = (ListView) findViewById(R.id.qualification_list);
 
         DataPopulator recogedor = new DataPopulator();
 
         ArrayList<Sitios> versiones = new ArrayList<Sitios>();
-
-        MyAsyncTaskMapas runner = new MyAsyncTaskMapas(MapActivity.this);
-        runner.execute("tutut");
-
-        /*
 
         switch (sitioType) {
 
@@ -63,17 +53,8 @@ public class MapActivity extends AppCompatActivity {
             default:
                 break;
         }
-*/
 
-       // NameOfSitiosAdapter adaptador = new NameOfSitiosAdapter(this, versiones);
-        //lista.setAdapter(adaptador);
-
-    }
-
-    public void populateList(ArrayList<Sitios> sitios) {
-        NameOfSitiosAdapter adaptador = new NameOfSitiosAdapter(this, sitios);
+        QualificationOfSitiosAdapter adaptador = new QualificationOfSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
     }
-
-
 }

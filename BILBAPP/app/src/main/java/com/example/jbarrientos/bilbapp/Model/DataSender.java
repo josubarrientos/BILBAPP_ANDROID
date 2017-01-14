@@ -17,6 +17,9 @@ import com.example.jbarrientos.bilbapp.R;
 
 public class DataSender {
 
+    private RestClient restClient;
+    private String server = "http://u017633.ehu.eus:28080/BILBAPP_SERVER/rest/Bilbapp/";
+
     public DataSender(){
 
     }

@@ -2,8 +2,7 @@ package com.example.jbarrientos.bilbapp.Model;
 
 import android.os.AsyncTask;
 
-import com.example.jbarrientos.bilbapp.InfoActivity;
-import com.example.jbarrientos.bilbapp.MapActivity;
+import com.example.jbarrientos.bilbapp.View.MapActivity;
 
 import java.util.ArrayList;
 

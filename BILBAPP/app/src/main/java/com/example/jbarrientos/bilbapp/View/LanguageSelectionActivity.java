@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Toast;
 import android.content.Intent;
 import android.content.res.Configuration;
+
+import com.example.jbarrientos.bilbapp.R;
+
 import java.util.Locale;
 
 

@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,15 +6,13 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Experience;
+import com.example.jbarrientos.bilbapp.R;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ExpericenceShowActivity extends AppCompatActivity {
 

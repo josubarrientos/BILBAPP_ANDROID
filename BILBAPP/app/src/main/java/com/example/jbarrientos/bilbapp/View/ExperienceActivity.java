@@ -1,27 +1,28 @@
-package com.example.jbarrientos.bilbapp;
+package com.example.jbarrientos.bilbapp.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.QualificationOfSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.ExperiencesInSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
+import com.example.jbarrientos.bilbapp.R;
 
 import java.util.ArrayList;
 
-public class QualificationActivity extends AppCompatActivity {
+public class ExperienceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qualification);
+        setContentView(R.layout.activity_experience);
 
-        setTitle(R.string.help_icon_5);
+        setTitle(R.string.help_icon_4);
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
-        ListView lista = (ListView) findViewById(R.id.qualification_list);
+        ListView lista = (ListView) findViewById(R.id.info_list);
 
         DataPopulator recogedor = new DataPopulator();
 
@@ -53,7 +54,8 @@ public class QualificationActivity extends AppCompatActivity {
                 break;
         }
 
-        QualificationOfSitiosAdapter adaptador = new QualificationOfSitiosAdapter(this, versiones);
+        ExperiencesInSitiosAdapter adaptador = new ExperiencesInSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
+
     }
 }

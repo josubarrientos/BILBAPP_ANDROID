@@ -2,28 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jbarrientos.bilbapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LanguageSelectionActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SelectionActivity" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".MapActivity" />
-        <activity android:name=".TranslationActivity" />
-        <activity android:name=".ExperienceActivity" />
-        <activity android:name=".ExpericenceShowActivity" />
-        <activity android:name=".QualificationActivity"></activity>
+        <activity android:name=".View.LanguageSelectionActivity" />
+        <activity android:name=".View.HomeActivity" />
+        <activity android:name=".View.SelectionActivity" />
+        <activity android:name=".View.InfoActivity" />
+        <activity android:name=".View.MapActivity" />
+        <activity android:name=".View.TranslationActivity" />
+        <activity android:name=".View.ExperienceActivity" />
+        <activity android:name=".View.ExpericenceShowActivity" />
+        <activity android:name=".View.QualificationActivity"></activity>
     </application>
 
 </manifest>
