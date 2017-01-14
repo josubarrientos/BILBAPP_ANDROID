@@ -12,6 +12,9 @@
     <string name="sending_button">ENVIAR</string>
     <string name="qualification_title">Escriba a súa experiencia : </string>
 
+    <string name="exp_name_hint">O teu nome</string>
+    <string name="exp_cont_hint">Experiencia</string>
+
     <string name="post_response_code_OK">Envio realizado correctamente</string>
     <string name="post_response_code_NOK">Transporte fallou</string>
 

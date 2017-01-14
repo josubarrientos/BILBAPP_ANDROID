@@ -12,6 +12,9 @@
     <string name="sending_button">BIDALI</string>
     <string name="qualification_title">Sartu zure experientzia : </string>
 
+    <string name="exp_name_hint">Zure izena</string>
+    <string name="exp_cont_hint">Experientzia</string>
+
     <string name="post_response_code_OK">Bidalketa zuzena</string>
     <string name="post_response_code_NOK">Huts bidalketa</string>
 

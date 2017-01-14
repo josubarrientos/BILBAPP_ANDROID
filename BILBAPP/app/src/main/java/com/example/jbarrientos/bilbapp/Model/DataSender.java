@@ -46,17 +46,17 @@ public class DataSender {
         contx=ctx;
         nombreDeSitio=nombreSitio;
 
-        AlertDialog.Builder loginDialog = new AlertDialog.Builder(ctx);
+        AlertDialog.Builder expDialog = new AlertDialog.Builder(ctx);
 
         LayoutInflater factory = LayoutInflater.from(ctx);
         final View f = factory.inflate(R.layout.experience_insert, null);
 
-        loginDialog.setTitle(ctx.getString(R.string.qualification_title)+" "+nombreSitio);
-        loginDialog.setView(f);
+        expDialog.setTitle(ctx.getString(R.string.qualification_title)+" "+nombreSitio);
+        expDialog.setView(f);
 
         Button submit = (Button)f.findViewById(R.id.submit);
 
-        final AlertDialog dialog = loginDialog.create();
+        final AlertDialog dialog = expDialog.create();
 
         submit.setOnClickListener(new View.OnClickListener()
         {

@@ -70,7 +70,7 @@ public class InfoActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         break;
-                    case "hotel":
+                    case "alojamiento":
                         try {
                             versiones = dp.cargaInfoSitios(typeSitio);
                         } catch (IOException e) {
@@ -79,7 +79,7 @@ public class InfoActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         break;
-                    case "deporte":
+                    case "deportes":
                         try {
                             versiones = dp.cargaInfoSitios(typeSitio);
                         } catch (IOException e) {
@@ -97,7 +97,7 @@ public class InfoActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         break;
-                    case "transporte":
+                    case "transportes":
                         try {
                             versiones = dp.cargaInfoSitios(typeSitio);
                         } catch (IOException e) {
