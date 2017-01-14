@@ -6,7 +6,6 @@ import android.widget.ListView;
 
 import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.MyAsyncTaskSitios;
 import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
@@ -35,17 +34,7 @@ public class InfoActivity extends AppCompatActivity {
 
         SitiosQuery(sitioType);
 
-        //MyAsyncTaskSitios runner = new MyAsyncTaskSitios(InfoActivity.this);
-        //runner.execute(sitioType);
-
     }
-
-
-    public void populateList(ArrayList<Sitios> sitios) {
-        StaticSitiosAdapter adaptador = new StaticSitiosAdapter(this, sitios);
-        lista.setAdapter(adaptador);
-    }
-
 
     public void SitiosQuery (final String typeSitio){
         new QueryAsyncTask<ArrayList<Sitios>>(this) {
@@ -130,6 +119,5 @@ public class InfoActivity extends AppCompatActivity {
             }
         }.execute();
     }
-
 
 }
