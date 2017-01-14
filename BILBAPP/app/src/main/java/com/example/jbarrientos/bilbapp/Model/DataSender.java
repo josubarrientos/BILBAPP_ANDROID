@@ -1,7 +1,9 @@
 package com.example.jbarrientos.bilbapp.Model;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +35,7 @@ public class DataSender {
     private String senderUserName;
     private String senderOpinion;
     private Context contx;
+    private String nombreDeSitio;
 
     public DataSender(){
         restClient = new RestClient(server);
@@ -41,6 +44,7 @@ public class DataSender {
     public void sendExperiencia(Context ctx, final String nombreSitio) throws IOException, JSONException {
 
         contx=ctx;
+        nombreDeSitio=nombreSitio;
 
         AlertDialog.Builder loginDialog = new AlertDialog.Builder(ctx);
 
@@ -130,10 +134,12 @@ public class DataSender {
                 System.out.println("Vuelta: "+estado);
 
                 if(estado==200){
-                    Toast toast1 =
-                            Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
-
+                    Toast toast1 = Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
                     toast1.show();
+                    Intent i = new Intent(contx, ExpericenceShowActivity.class);
+                    i.putExtra("extra_text", nombreDeSitio);
+                    contx.startActivity(i);
+                    ((Activity) contx).finish();
                 }else{
                     Toast toast1 =
                             Toast.makeText(contx,R.string.post_response_code_NOK, Toast.LENGTH_SHORT);
