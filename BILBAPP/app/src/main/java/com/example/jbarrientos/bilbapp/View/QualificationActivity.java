@@ -27,7 +27,7 @@ public class QualificationActivity extends AppCompatActivity {
         DataPopulator recogedor = new DataPopulator();
 
         ArrayList<Sitios> versiones = new ArrayList<Sitios>();
-
+/*
         switch (sitioType) {
 
             case "fiesta":
@@ -53,7 +53,7 @@ public class QualificationActivity extends AppCompatActivity {
             default:
                 break;
         }
-
+*/
         QualificationOfSitiosAdapter adaptador = new QualificationOfSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
     }

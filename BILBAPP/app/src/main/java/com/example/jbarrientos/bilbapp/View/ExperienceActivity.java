@@ -27,7 +27,7 @@ public class ExperienceActivity extends AppCompatActivity {
         DataPopulator recogedor = new DataPopulator();
 
         ArrayList<Sitios> versiones = new ArrayList<Sitios>();
-
+/*
         switch (sitioType) {
 
             case "fiesta":
@@ -53,7 +53,7 @@ public class ExperienceActivity extends AppCompatActivity {
             default:
                 break;
         }
-
+*/
         ExperiencesInSitiosAdapter adaptador = new ExperiencesInSitiosAdapter(this, versiones);
         lista.setAdapter(adaptador);
 
