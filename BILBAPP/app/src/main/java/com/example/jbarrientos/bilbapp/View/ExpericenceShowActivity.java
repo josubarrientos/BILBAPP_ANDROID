@@ -7,16 +7,25 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
+import com.example.jbarrientos.bilbapp.Adapters.ExperiencesInSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Experience;
+import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
+import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ExpericenceShowActivity extends AppCompatActivity {
 
+    ListView lista;
     private String nombre;
+    private ArrayList<Experience> versiones = new ArrayList<Experience>();
+    private DataPopulator dp = new DataPopulator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +36,9 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
         setTitle(R.string.help_icon_4);
 
-        ListView lista = (ListView) findViewById(R.id.expe_list);
+        lista = (ListView) findViewById(R.id.expe_list);
 
-        DataPopulator recogedor = new DataPopulator();
-
-        ArrayList<Experience> versiones = new ArrayList<Experience>();
-
-        versiones = recogedor.cargaExperienciasByName(this,nombre);
-
-        ExperienceAdapter adaptador = new ExperienceAdapter(this, versiones);
-        lista.setAdapter(adaptador);
+        CriticasQuery(nombre);
 
     }
 
@@ -51,10 +53,27 @@ public class ExpericenceShowActivity extends AppCompatActivity {
             Toast toast1 =
                     Toast.makeText(getApplicationContext(),
                             "Correctamente enviado", Toast.LENGTH_SHORT);
-
             toast1.show();
         }
 
-
     }
+
+    public void CriticasQuery (final String nombreSitio){
+        new QueryAsyncTask<ArrayList<Experience>>(this) {
+            @Override
+            protected ArrayList<Experience> work() throws Exception{
+
+                versiones = dp.cargaExperienciasByName(nombreSitio);
+
+                return versiones;
+            }
+
+            @Override
+            protected void onFinish(ArrayList<Experience> estado){
+                ExperienceAdapter adaptador = new ExperienceAdapter(ExpericenceShowActivity.this, versiones);
+                lista.setAdapter(adaptador);
+            }
+        }.execute();
+    }
+
 }

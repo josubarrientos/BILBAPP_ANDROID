@@ -25,6 +25,7 @@ public class DataPopulator {
     private RestClient restClient;
     private String server = "http://u017633.ehu.eus:28080/BILBAPP_SERVER/rest/Bilbapp";
     private ArrayList<Sitios> arraySitios = new ArrayList<Sitios>();
+    private ArrayList<Experience> arrayExperiencias = new ArrayList<Experience>();
     private List<String> Lines;
 
     public DataPopulator (){
@@ -88,28 +89,37 @@ public class DataPopulator {
         return arraySitios;
     }
 
-    public ArrayList<Experience> cargaExperienciasByName(Context ctx,String name){
+    public ArrayList<Experience> cargaExperienciasByName(String name) throws IOException, JSONException{
 
-        String nombreDeBusqueda = name;
+        JSONObject jo = restClient.getJson(String.format("requestCriticas?sitioName=%s",name));
+
+        JSONArray listaCriticas = jo.getJSONArray("critica");
+
+        int listaCriticasLength = listaCriticas.length();
+
 
         Date inputDate = new Date();
 
-        String inputString = "11/11/2012";
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            inputDate = dateFormat.parse(inputString);
-        } catch (ParseException e) {
-            e.printStackTrace();
+        for(int i = 0;i<listaCriticasLength;i++){
+            JSONObject jsonCritica = listaCriticas.getJSONObject(i);
+
+            String inputString = jsonCritica.getString("fecha");
+
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                inputDate = dateFormat.parse(inputString);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Experience expTemp = new Experience(jsonCritica.getString("usuario"),inputDate,jsonCritica.getString("critica"));
+
+            arrayExperiencias.add(expTemp);
+
         }
 
-        ArrayList<Experience> versiones = new ArrayList<Experience>();
-
-        versiones.add(
-                new Experience("Pepito", inputDate,"Todo muy mal"));
-        versiones.add(
-                new Experience("Joaqin Cortes", inputDate,"Todo muy bien"));
-
-        return versiones;
+        return arrayExperiencias;
     }
+ 
 
 }
