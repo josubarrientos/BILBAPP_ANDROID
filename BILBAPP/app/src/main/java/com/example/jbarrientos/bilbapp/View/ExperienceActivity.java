@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.jbarrientos.bilbapp.Adapters.ExperiencesInSitiosAdapter;
-import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.Experience;
 import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;

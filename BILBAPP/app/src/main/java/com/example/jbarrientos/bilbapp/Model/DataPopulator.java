@@ -1,7 +1,6 @@
 package com.example.jbarrientos.bilbapp.Model;
 
 import java.io.IOException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -11,9 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import android.content.Context;
-
 import com.example.jbarrientos.bilbapp.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,16 +44,16 @@ public class DataPopulator {
             case "restaurantes":
                 Lines = Arrays.asList(ctx.getResources().getStringArray(R.array.expresion_restaurantes));
                 break;
-            case "hotel":
+            case "alojamiento":
                 Lines = Arrays.asList(ctx.getResources().getStringArray(R.array.expresion_alojamiento));
                 break;
-            case "deporte":
+            case "deportes":
                 Lines = Arrays.asList(ctx.getResources().getStringArray(R.array.expresion_deportes));
                 break;
             case "monumentos":
                 Lines = Arrays.asList(ctx.getResources().getStringArray(R.array.expresion_monumentos));
                 break;
-            case "transporte":
+            case "transportes":
                 Lines = Arrays.asList(ctx.getResources().getStringArray(R.array.expresion_transporte));
             default:
                 break;
@@ -75,7 +72,6 @@ public class DataPopulator {
 
     public ArrayList<Sitios> cargaInfoSitios(String tipoSitio) throws IOException, JSONException {
 
-        System.out.println("Sitio: "+String.format("requestSitios?opcionName=%s",tipoSitio));
         JSONObject jo = restClient.getJson(String.format("requestSitios?opcionName=%s",tipoSitio));
 
         JSONArray listaSitios = jo.getJSONArray("sitio");

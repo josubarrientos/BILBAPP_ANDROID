@@ -46,7 +46,6 @@ public class StaticSitiosAdapter extends BaseAdapter{
             LayoutInflater inf= (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inf.inflate(R.layout.static_sitio_layout,null);
         }
-
         Sitios sitio= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);

@@ -25,8 +25,6 @@ public class RestClient {
 
 
     private HttpURLConnection getConnection(String path) throws IOException {
-        System.out.println("ESitios objetivo "+path);
-        System.out.println("Estableciendo conexión con "+String.format("%s/%s", baseUrl, path));
         URL url = new URL(String.format("%s/%s", baseUrl, path));
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestProperty("Connection","Keep-Alive");
@@ -52,14 +50,12 @@ public class RestClient {
     }
 
     public int postJson(final JSONObject json, String path) throws IOException {
-        System.out.println("Entra en postJSON con "+json.toString());
         HttpURLConnection conn = null;
         try {
             conn = getConnection(path);
             System.out.println("conexión recuperada");
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-            System.out.println("Establecidaos metods de envio");
             PrintWriter pw = new PrintWriter(conn.getOutputStream());
             pw.print(json.toString());
             pw.close();

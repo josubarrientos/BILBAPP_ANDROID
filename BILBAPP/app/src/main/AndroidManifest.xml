@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jbarrientos.bilbapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,8 @@
         <activity android:name=".View.TranslationActivity" />
         <activity android:name=".View.ExperienceActivity" />
         <activity android:name=".View.ExpericenceShowActivity" />
-        <activity android:name=".View.QualificationActivity"></activity>
+        <activity android:name=".View.QualificationActivity" />
+        <activity android:name=".View.RatingActivity"></activity>
     </application>
 
 </manifest>

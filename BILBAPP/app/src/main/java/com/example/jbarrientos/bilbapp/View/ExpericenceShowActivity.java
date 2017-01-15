@@ -4,15 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
-import com.example.jbarrientos.bilbapp.Adapters.ExperiencesInSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Experience;
 import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
-import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
 import org.json.JSONException;

@@ -7,20 +7,14 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
 import com.example.jbarrientos.bilbapp.R;
 import com.example.jbarrientos.bilbapp.View.ExpericenceShowActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -35,6 +29,7 @@ public class DataSender {
     private String senderUserName;
     private String senderOpinion;
     private Context contx;
+    private Context contxcaul;
     private String nombreDeSitio;
 
     public DataSender(){
@@ -107,41 +102,43 @@ public class DataSender {
 
     }
 
-    public void sendQualification(Context ctx,String nombre,float nota) throws IOException, JSONException {
+    public void sendQualification(Context ctx, String nombre,float nota) throws IOException, JSONException {
 
-        final JSONObject jo = new JSONObject();
-        jo.put("calificacion",nota);
-        jo.put("sitio",nombre);
+        contxcaul=ctx;
 
-        new QueryAsyncTask<Integer>(contx) {
+        final JSONObject joqua = new JSONObject();
+        joqua.put("calificacion",nota);
+        joqua.put("sitio",nombre);
+
+        QualificationPost(ctx,joqua);
+
+    }
+
+    public void QualificationPost (final Context ctx, final JSONObject joqua){
+        new QueryAsyncTask<Integer>(ctx) {
             @Override
             protected Integer work() throws Exception{
-
-                return restClient.postJson(jo,"addPuntuacion");
+                return restClient.postJson(joqua,"addPuntuacion");
             }
 
             @Override
             protected void onFinish(Integer estado){
-                System.out.println("Vuelta: "+estado);
 
                 if(estado==200){
-                    Toast toast1 = Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(contxcaul,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
                     toast1.show();
-                    Intent i = new Intent(contx, ExpericenceShowActivity.class);
-                    i.putExtra("extra_text", nombreDeSitio);
-                    contx.startActivity(i);
-                    ((Activity) contx).finish();
+                    ((Activity) contxcaul).finish();
                 }else{
                     Toast toast1 =
-                            Toast.makeText(contx,R.string.post_response_code_NOK, Toast.LENGTH_SHORT);
+                            Toast.makeText(contxcaul,R.string.post_response_code_NOK, Toast.LENGTH_SHORT);
 
                     toast1.show();
                 }
 
             }
         }.execute();
-
     }
+
 
     public void ExperiencePost (final JSONObject jo){
         new QueryAsyncTask<Integer>(contx) {
@@ -153,7 +150,6 @@ public class DataSender {
 
             @Override
             protected void onFinish(Integer estado){
-                System.out.println("Vuelta: "+estado);
 
                 if(estado==200){
                     Toast toast1 = Toast.makeText(contx,R.string.post_response_code_OK, Toast.LENGTH_SHORT);
@@ -168,7 +164,6 @@ public class DataSender {
 
                     toast1.show();
                 }
-
 
             }
         }.execute();

@@ -22,8 +22,6 @@ public class LanguageSelectionActivity extends AppCompatActivity {
 
     public void selectEuskadi(View v){
 
-        Toast.makeText(getApplicationContext(), "Euskadi!", Toast.LENGTH_SHORT).show();
-
         Locale locale = new Locale("eu");
         Locale.setDefault(locale);
         Configuration config = new Configuration();

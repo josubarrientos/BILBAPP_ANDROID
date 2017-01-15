@@ -1,7 +1,6 @@
 package com.example.jbarrientos.bilbapp.Adapters;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,7 +11,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.util.TypedValue;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
 
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;

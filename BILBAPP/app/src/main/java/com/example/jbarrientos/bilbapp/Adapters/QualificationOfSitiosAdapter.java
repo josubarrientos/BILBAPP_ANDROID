@@ -6,19 +6,17 @@ package com.example.jbarrientos.bilbapp.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.RatingBar.OnRatingBarChangeListener;
 
-
-import com.example.jbarrientos.bilbapp.Model.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
-
+import com.example.jbarrientos.bilbapp.View.RatingActivity;
 import java.util.ArrayList;
 
 public class QualificationOfSitiosAdapter extends BaseAdapter{
@@ -40,39 +38,32 @@ public class QualificationOfSitiosAdapter extends BaseAdapter{
     @Override
     public long getItemId(int position) { return position; }
 
-    @Override
-    public View getView(int position, final View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         View v = convertView;
 
         if(convertView==null){
             LayoutInflater inf= (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inf.inflate(R.layout.static_sitio_layout,null);
+            v = inf.inflate(R.layout.name_of_sitio_layout,null);
         }
 
         final Sitios sitio= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
-        final RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
+        nombreSitio.setTextSize(TypedValue.COMPLEX_UNIT_SP,22);
+        nombreSitio.setOnClickListener(new View.OnClickListener() {
 
-        final View volcado = v;
+            public void onClick(View v) {
 
-        califSitio.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar, float rating,
-                                        boolean fromUser) {
-
-                califSitio.setIsIndicator(true);
-
-                DataSender sender = new DataSender();
-
-                sender.sendQualification(volcado.getContext(),sitio.getNombre(),sitio.getCalificacion());
-
-
+                Intent i = new Intent(v.getContext(), RatingActivity.class);
+                i.putExtra("extra_text", sitio.getNombre());
+                v.getContext().startActivity(i);
             }
         });
 
         return v;
     }
+
 
 }
