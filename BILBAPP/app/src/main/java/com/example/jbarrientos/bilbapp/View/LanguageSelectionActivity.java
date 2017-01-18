@@ -1,7 +1,9 @@
 package com.example.jbarrientos.bilbapp.View;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Toast;
 import android.content.Intent;
@@ -23,10 +25,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectEuskadi(View v){
 
         Locale locale = new Locale("eu");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
@@ -36,10 +39,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectCatalunia(View v){
 
         Locale locale = new Locale("ca");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
@@ -49,10 +53,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectGalicia(View v){
 
         Locale locale = new Locale("gl");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
@@ -62,10 +67,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectSpain(View v){
 
         Locale locale = new Locale("es");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
@@ -75,10 +81,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectEngland(View v){
 
         Locale locale = new Locale("en");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);
@@ -88,10 +95,11 @@ public class LanguageSelectionActivity extends AppCompatActivity {
     public void selectFrance(View v){
 
         Locale locale = new Locale("fr");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getApplicationContext().getResources().updateConfiguration(config, null);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf,dm);
 
         Intent i = new Intent(LanguageSelectionActivity.this, HomeActivity.class);
         startActivity(i);

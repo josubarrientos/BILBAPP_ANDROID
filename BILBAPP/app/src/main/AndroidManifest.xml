@@ -18,16 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.LanguageSelectionActivity" />
-        <activity android:name=".View.HomeActivity" />
-        <activity android:name=".View.SelectionActivity" />
-        <activity android:name=".View.InfoActivity" />
-        <activity android:name=".View.MapActivity" />
-        <activity android:name=".View.TranslationActivity" />
-        <activity android:name=".View.ExperienceActivity" />
-        <activity android:name=".View.ExpericenceShowActivity" />
-        <activity android:name=".View.QualificationActivity" />
-        <activity android:name=".View.RatingActivity"></activity>
+        <activity android:name=".View.LanguageSelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.SelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.InfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.MapActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.TranslationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.ExperienceActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.ExpericenceShowActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.QualificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".View.RatingActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
