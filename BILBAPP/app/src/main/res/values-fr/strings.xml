@@ -9,6 +9,8 @@
     <string name="help_icon_4">Expériences</string>
     <string name="help_icon_5">Avis</string>
 
+    <string name="network_off">Pas de connexion Internet</string>
+
     <string name="sending_button">ENVOYER</string>
     <string name="qualification_title">Introduit votre expérience : </string>
 

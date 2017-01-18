@@ -9,6 +9,8 @@
     <string name="help_icon_4">Experiències</string>
     <string name="help_icon_5">Opinions</string>
 
+    <string name="network_off">Sense connexió a Internet</string>
+
     <string name="sending_button">ENVIAR</string>
     <string name="qualification_title">introdueix la teva experiència : </string>
 
