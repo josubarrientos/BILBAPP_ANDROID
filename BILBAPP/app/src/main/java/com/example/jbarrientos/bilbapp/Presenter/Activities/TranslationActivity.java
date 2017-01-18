@@ -1,10 +1,10 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.TranslationAdapter;
+import com.example.jbarrientos.bilbapp.Presenter.Adapters.TranslationAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
 import com.example.jbarrientos.bilbapp.Model.Translation;
 import com.example.jbarrientos.bilbapp.R;

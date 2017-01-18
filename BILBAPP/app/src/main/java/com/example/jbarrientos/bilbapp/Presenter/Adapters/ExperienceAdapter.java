@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.Adapters;
+package com.example.jbarrientos.bilbapp.Presenter.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.jbarrientos.bilbapp.Model.Experience;
-import com.example.jbarrientos.bilbapp.Model.Translation;
 import com.example.jbarrientos.bilbapp.R;
 
 import java.text.SimpleDateFormat;

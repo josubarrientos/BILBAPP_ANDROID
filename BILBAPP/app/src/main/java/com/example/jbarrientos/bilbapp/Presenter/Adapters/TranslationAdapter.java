@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.Adapters;
+package com.example.jbarrientos.bilbapp.Presenter.Adapters;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.Model;
+package com.example.jbarrientos.bilbapp.Presenter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.jbarrientos.bilbapp.Model.RestClient;
+import com.example.jbarrientos.bilbapp.Presenter.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.R;
-import com.example.jbarrientos.bilbapp.View.ExpericenceShowActivity;
+import com.example.jbarrientos.bilbapp.Presenter.Activities.ExpericenceShowActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
@@ -90,7 +93,7 @@ public class DataSender {
                     e.printStackTrace();
                 }
 
-                ExperiencePost(jo);
+                experiencePost(jo);
 
                 dialog.dismiss();
 
@@ -110,11 +113,11 @@ public class DataSender {
         joqua.put("calificacion",nota);
         joqua.put("sitio",nombre);
 
-        QualificationPost(ctx,joqua);
+        qualificationPost(ctx,joqua);
 
     }
 
-    public void QualificationPost (final Context ctx, final JSONObject joqua){
+    public void qualificationPost(final Context ctx, final JSONObject joqua){
         new QueryAsyncTask<Integer>(ctx) {
             @Override
             protected Integer work() throws Exception{
@@ -140,7 +143,7 @@ public class DataSender {
     }
 
 
-    public void ExperiencePost (final JSONObject jo){
+    public void experiencePost(final JSONObject jo){
         new QueryAsyncTask<Integer>(contx) {
             @Override
             protected Integer work() throws Exception{
@@ -168,6 +171,5 @@ public class DataSender {
             }
         }.execute();
     }
-
 
 }

@@ -1,28 +1,29 @@
-package com.example.jbarrientos.bilbapp.Adapters;
+package com.example.jbarrientos.bilbapp.Presenter.Adapters;
+
+/**
+ * Created by jbarrientos on 4/01/17.
+ */
+
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
-import android.util.TypedValue;
-import android.view.View.OnClickListener;
 
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
-import java.util.ArrayList;
-
-public class NameOfSitiosAdapter extends BaseAdapter {
+public class StaticSitiosAdapter extends BaseAdapter{
 
     private ArrayList<Sitios> listSitios;
     protected Activity activity;
 
-    public NameOfSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
+    public StaticSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
         this.activity=activity;
         this.listSitios = sitios;
     }
@@ -43,25 +44,15 @@ public class NameOfSitiosAdapter extends BaseAdapter {
 
         if(convertView==null){
             LayoutInflater inf= (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inf.inflate(R.layout.name_of_sitio_layout,null);
+            v = inf.inflate(R.layout.static_sitio_layout,null);
         }
-
-        final Sitios sitio= listSitios.get(position);
+        Sitios sitio= listSitios.get(position);
 
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
-        nombreSitio.setTextSize(TypedValue.COMPLEX_UNIT_SP,22);
-        nombreSitio.setOnClickListener(new OnClickListener() {
-
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(sitio.getDireccion()));
-                v.getContext().startActivity(intent);
-
-            }
-        });
-
+        RatingBar califSitio = (RatingBar) v.findViewById(R.id.calificacionSitio);
+        califSitio.setRating(sitio.getCalificacion());
+        califSitio.setIsIndicator(true);
         return v;
     }
 

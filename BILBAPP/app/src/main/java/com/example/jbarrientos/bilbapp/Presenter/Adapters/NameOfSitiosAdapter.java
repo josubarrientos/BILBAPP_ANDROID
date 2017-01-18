@@ -1,28 +1,28 @@
-package com.example.jbarrientos.bilbapp.Adapters;
+package com.example.jbarrientos.bilbapp.Presenter.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.TypedValue;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.util.TypedValue;
+import android.view.View.OnClickListener;
 
-import com.example.jbarrientos.bilbapp.View.ExpericenceShowActivity;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
 import java.util.ArrayList;
 
-public class ExperiencesInSitiosAdapter extends BaseAdapter {
+public class NameOfSitiosAdapter extends BaseAdapter {
 
     private ArrayList<Sitios> listSitios;
     protected Activity activity;
 
-    public ExperiencesInSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
+    public NameOfSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
         this.activity=activity;
         this.listSitios = sitios;
     }
@@ -55,9 +55,9 @@ public class ExperiencesInSitiosAdapter extends BaseAdapter {
 
             public void onClick(View v) {
 
-                Intent i = new Intent(v.getContext(), ExpericenceShowActivity.class);
-                i.putExtra("extra_text", sitio.getNombre());
-                v.getContext().startActivity(i);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(sitio.getDireccion()));
+                v.getContext().startActivity(intent);
 
             }
         });

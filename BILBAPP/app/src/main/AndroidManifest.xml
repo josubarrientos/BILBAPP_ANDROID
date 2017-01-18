@@ -11,23 +11,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.MainActivity">
+        <activity android:name=".Presenter.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.LanguageSelectionActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.HomeActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.SelectionActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.InfoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.MapActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.TranslationActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.ExperienceActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.ExpericenceShowActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.QualificationActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".View.RatingActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Presenter.Activities.LanguageSelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.SelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.InfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.MapActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.TranslationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.ExperienceActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.ExpericenceShowActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.QualificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Presenter.Activities.RatingActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

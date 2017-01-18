@@ -1,15 +1,15 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.jbarrientos.bilbapp.Adapters.ExperienceAdapter;
+import com.example.jbarrientos.bilbapp.Presenter.Adapters.ExperienceAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.DataSender;
+import com.example.jbarrientos.bilbapp.Presenter.DataSender;
 import com.example.jbarrientos.bilbapp.Model.Experience;
-import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
+import com.example.jbarrientos.bilbapp.Presenter.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.R;
 
 import org.json.JSONException;
@@ -35,7 +35,7 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
         lista = (ListView) findViewById(R.id.expe_list);
 
-        CriticasQuery(nombre);
+        criticasQuery(nombre);
 
     }
 
@@ -47,7 +47,7 @@ public class ExpericenceShowActivity extends AppCompatActivity {
 
     }
 
-    public void CriticasQuery (final String nombreSitio){
+    public void criticasQuery(final String nombreSitio){
         new QueryAsyncTask<ArrayList<Experience>>(this) {
             @Override
             protected ArrayList<Experience> work() throws Exception{

@@ -1,15 +1,14 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.jbarrientos.bilbapp.Adapters.QualificationOfSitiosAdapter;
-import com.example.jbarrientos.bilbapp.Adapters.StaticSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Presenter.Adapters.QualificationOfSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.NetworkChecker;
-import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
+import com.example.jbarrientos.bilbapp.Presenter.NetworkChecker;
+import com.example.jbarrientos.bilbapp.Presenter.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
@@ -40,7 +39,7 @@ public class QualificationActivity extends AppCompatActivity {
 
         if(networkOn==true)
         {
-            SitiosQuery(sitioType);
+            sitiosQuery(sitioType);
         }else{
             Toast toast1 = Toast.makeText(this,R.string.network_off,Toast.LENGTH_SHORT);
             toast1.show();
@@ -48,7 +47,7 @@ public class QualificationActivity extends AppCompatActivity {
 
     }
 
-    public void SitiosQuery (final String typeSitio){
+    public void sitiosQuery(final String typeSitio){
         new QueryAsyncTask<ArrayList<Sitios>>(this) {
             @Override
             protected ArrayList<Sitios> work() throws Exception{

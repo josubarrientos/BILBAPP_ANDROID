@@ -1,14 +1,14 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.jbarrientos.bilbapp.Adapters.NameOfSitiosAdapter;
+import com.example.jbarrientos.bilbapp.Presenter.Adapters.ExperiencesInSitiosAdapter;
 import com.example.jbarrientos.bilbapp.Model.DataPopulator;
-import com.example.jbarrientos.bilbapp.Model.NetworkChecker;
-import com.example.jbarrientos.bilbapp.Model.QueryAsyncTask;
+import com.example.jbarrientos.bilbapp.Presenter.NetworkChecker;
+import com.example.jbarrientos.bilbapp.Presenter.QueryAsyncTask;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
 
@@ -17,7 +17,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MapActivity extends AppCompatActivity {
+public class ExperienceActivity extends AppCompatActivity {
 
     ListView lista;
     private ArrayList<Sitios> versiones = new ArrayList<Sitios>();
@@ -27,9 +27,9 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_experience);
 
-        setTitle(R.string.help_icon_2);
+        setTitle(R.string.help_icon_4);
 
         String sitioType = getIntent().getStringExtra("extra_text");
 
@@ -39,7 +39,7 @@ public class MapActivity extends AppCompatActivity {
 
         if(networkOn==true)
         {
-            SitiosQuery(sitioType);
+            sitiosQuery(sitioType);
         }else{
             Toast toast1 = Toast.makeText(this,R.string.network_off,Toast.LENGTH_SHORT);
             toast1.show();
@@ -47,7 +47,7 @@ public class MapActivity extends AppCompatActivity {
 
     }
 
-    public void SitiosQuery (final String typeSitio){
+    public void sitiosQuery(final String typeSitio){
         new QueryAsyncTask<ArrayList<Sitios>>(this) {
             @Override
             protected ArrayList<Sitios> work() throws Exception{
@@ -125,10 +125,9 @@ public class MapActivity extends AppCompatActivity {
 
             @Override
             protected void onFinish(ArrayList<Sitios> estado){
-                NameOfSitiosAdapter adaptador = new NameOfSitiosAdapter(MapActivity.this, estado);
+                ExperiencesInSitiosAdapter adaptador = new ExperiencesInSitiosAdapter(ExperienceActivity.this, versiones);
                 lista.setAdapter(adaptador);
             }
         }.execute();
     }
-
 }

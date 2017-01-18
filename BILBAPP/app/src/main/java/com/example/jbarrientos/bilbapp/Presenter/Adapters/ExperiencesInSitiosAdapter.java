@@ -1,8 +1,4 @@
-package com.example.jbarrientos.bilbapp.Adapters;
-
-/**
- * Created by jbarrientos on 4/01/17.
- */
+package com.example.jbarrientos.bilbapp.Presenter.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,21 +6,23 @@ import android.content.Intent;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.jbarrientos.bilbapp.Presenter.Activities.ExpericenceShowActivity;
 import com.example.jbarrientos.bilbapp.Model.Sitios;
 import com.example.jbarrientos.bilbapp.R;
-import com.example.jbarrientos.bilbapp.View.RatingActivity;
+
 import java.util.ArrayList;
 
-public class QualificationOfSitiosAdapter extends BaseAdapter{
+public class ExperiencesInSitiosAdapter extends BaseAdapter {
 
     private ArrayList<Sitios> listSitios;
     protected Activity activity;
 
-    public QualificationOfSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
+    public ExperiencesInSitiosAdapter(Activity activity, ArrayList<Sitios> sitios) {
         this.activity=activity;
         this.listSitios = sitios;
     }
@@ -38,6 +36,7 @@ public class QualificationOfSitiosAdapter extends BaseAdapter{
     @Override
     public long getItemId(int position) { return position; }
 
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View v = convertView;
@@ -52,18 +51,18 @@ public class QualificationOfSitiosAdapter extends BaseAdapter{
         TextView nombreSitio = (TextView) v.findViewById(R.id.nombreSitio);
         nombreSitio.setText(sitio.getNombre());
         nombreSitio.setTextSize(TypedValue.COMPLEX_UNIT_SP,22);
-        nombreSitio.setOnClickListener(new View.OnClickListener() {
+        nombreSitio.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
 
-                Intent i = new Intent(v.getContext(), RatingActivity.class);
+                Intent i = new Intent(v.getContext(), ExpericenceShowActivity.class);
                 i.putExtra("extra_text", sitio.getNombre());
                 v.getContext().startActivity(i);
+
             }
         });
 
         return v;
     }
-
 
 }

@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

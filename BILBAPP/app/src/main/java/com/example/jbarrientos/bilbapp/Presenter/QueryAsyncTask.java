@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.Model;
+package com.example.jbarrientos.bilbapp.Presenter;
 
 import android.os.AsyncTask;
 import android.app.ProgressDialog;

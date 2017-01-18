@@ -1,4 +1,4 @@
-package com.example.jbarrientos.bilbapp.View;
+package com.example.jbarrientos.bilbapp.Presenter.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jbarrientos.bilbapp.Model.DataSender;
+import com.example.jbarrientos.bilbapp.Presenter.DataSender;
 import com.example.jbarrientos.bilbapp.R;
 
 import org.json.JSONException;
@@ -47,7 +47,6 @@ public class RatingActivity extends AppCompatActivity {
             float nota = rt.getRating();
             ds.sendQualification(RatingActivity.this,placeName,nota);
         }
-
 
     }
 }
